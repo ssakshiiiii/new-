@@ -1,5 +1,5 @@
 import React from 'react';
-import './SortingCodeImages.css';
+
 
 
 function SortingCodeImages({ selectedAlgorithm }) {
@@ -16,7 +16,7 @@ function SortingCodeImages({ selectedAlgorithm }) {
     <div className="sorting-code">
       <div className="algorithm-code">
         <div className="algorithm">
-          <img src={algorithmImages[selectedAlgorithm]} alt={`${selectedAlgorithm} Sort Code`} />
+          <img src={algorithmImages[selectedAlgorithm]} alt={`${selectedAlgorithm} Sort Code`} /> 
         </div>
       </div>
     </div>

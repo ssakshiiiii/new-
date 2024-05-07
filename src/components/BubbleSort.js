@@ -27,8 +27,8 @@ const BubbleSort = () =>{
 
             for(let j = 1; j < i; j++){
                setTimeout(() => {
-                  document.getElementById(ids[j]).childNodes[1].style.backgroundColor = 'black';
-                  document.getElementById(ids[j-1]).childNodes[1].style.backgroundColor = 'black';
+                  document.getElementById(ids[j]).childNodes[1].style.backgroundColor = 'white';
+                  document.getElementById(ids[j-1]).childNodes[1].style.backgroundColor = 'white';
                   
                   
                   setTimeout(() => {
@@ -37,8 +37,9 @@ const BubbleSort = () =>{
                   },myState.speed-10);
                      
                   if(values[j]<values[j-1]){
+
                      var msg = new SpeechSynthesisUtterance();
-                     msg.text = `${values[j-1]} is swapping with ${values[j]}`;
+                     msg.text = `${values[j-1]} is swapping from ${j-1} to ${ids[j]} with ${values[j]}`;
                      window.speechSynthesis.speak(msg);
                      
 
@@ -78,6 +79,10 @@ const BubbleSort = () =>{
             color: 'rgb(0, 182, 0)'
          })
 
+         var msgSort = new SpeechSynthesisUtterance();
+         msgSort.text = `Array is sorted`;
+         window.speechSynthesis.speak(msgSort);
+
       },(((myState.values.length-1)*(myState.values.length))/2)*myState.speed+50);
    }
    
@@ -94,6 +99,54 @@ const BubbleSort = () =>{
 }
 
 export default BubbleSort;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

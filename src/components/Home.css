@@ -1,7 +1,8 @@
 .home {
   display: flex;
   height: 100%;
-  width: 50vw; /* Set width to 50% of viewport width */
+  width: 73vw; /* Set width to 50% of viewport width */
+  background-color: black;
 }
 
 @media only screen and (max-width: 600px) {

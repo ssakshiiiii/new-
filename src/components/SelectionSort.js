@@ -1,5 +1,7 @@
 import React,{useEffect, useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { ToastContainer, toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 import selectionSortSound from '../assets/selectionSortSound.mp3';
 
@@ -41,7 +43,7 @@ const SelectionSort = () =>{
          document.getElementById(ids[i]).style.transform = `translateX(${i*11}px)`;
          document.getElementById(ids[ind]).style.transform = `translateX(${ind*11}px)`;
 
-         document.getElementById(ids[i]).childNodes[1].style.backgroundColor = 'black';
+         document.getElementById(ids[i]).childNodes[1].style.backgroundColor = 'white';
 
          setTimeout(() => {
             document.getElementById(ids[i]).childNodes[1].style.backgroundColor = myState.color;

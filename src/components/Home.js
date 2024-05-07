@@ -6,11 +6,15 @@ import Visuals from './Visuals';
 
 
 
+
 function Home({handleAlgorithmChange ,selectedAlgorithm}) {
   return (
     <div className="home">
        <Sidebar selectedAlgorithm={selectedAlgorithm} handleAlgorithmChange={handleAlgorithmChange}/>
+       
        <Visuals />
+      
+       
        
        
        

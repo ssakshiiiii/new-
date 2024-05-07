@@ -92,7 +92,7 @@ function Sidebar({ selectedAlgorithm, isDisabled, handleAlgorithmChange }) {
                 <label htmlFor="algo">Algorithm: </label>
                 <select name="algo" id="algo" onChange={(e) => handleAlgo(e.target.value)} disabled={isDisabled}>
                     <option value="bubble">Bubble Sort </option>
-                    <option value="selection">Selection Sort</option>
+                   <option value="selection">Selection Sort</option>
                     {/* <option value="merge">Merge Sort</option>
                     <option value="insertion">Insertion Sort</option>
                     
@@ -124,19 +124,19 @@ function Sidebar({ selectedAlgorithm, isDisabled, handleAlgorithmChange }) {
                     <option value='rgb(85, 212, 0)' style={{ color: 'rgb(10,200,20)' }}>Green</option>
                     <option value="rgb(255, 112, 112)" style={{ color: 'red' }}>Red</option>
                     <option value="grey" style={{ color: 'grey' }}>Black</option>
-                    <option value="hashtag#ddd902" style={{ color: 'hashtag#ddd902' }}>Yellow</option>
+                   
                 </select>
             </div>
 
             <div className="sidebar__option">
                 <label htmlFor="speed">Speed: </label>
                 <select name="speed" defaultValue={100} id="speed" onChange={(e) => handleSpeed(e.target.value)} disabled={isDisabled}>
-                    <option value={2000}>Ultra Slow</option>
+                    <option value={4000}>Ultra Slow</option>
                     <option value={500} >Slow</option>
                     <option value={200} >Medium</option>
                     <option value={100} >Fast</option>
                     <option value={20} >Super Fast</option>
-                    <option value={5} >Ultra Fast</option>
+                    
                 </select>
             </div>
         </div>

@@ -11,13 +11,13 @@ function Header() {
 
   return (
     <div className="header">
+    
+    <div className="header-logo">
+    Algo<span>Visualizer</span>
+    </div>
+    </div>
       
-        
-     
-
-      <div className="header-logo">Algo<span>Visualizer</span></div>
-      
-   </div>
+   
   )
 }
 
