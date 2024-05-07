@@ -1,7 +1,5 @@
 import React,{useEffect, useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { ToastContainer, toast } from 'react-toastify';
-import "react-toastify/dist/ReactToastify.css";
 
 import selectionSortSound from '../assets/selectionSortSound.mp3';
 
@@ -13,7 +11,20 @@ const SelectionSort = () =>{
    let values = myState.values.map((item) => item[0]);
    let ids = myState.values.map((item) => item[1]);
 
-   const solve = () => {
+   const initialPrompt = () => {
+      return new Promise((resolve) => {
+         var msgSort = new SpeechSynthesisUtterance();
+
+         msgSort.text = `Elements in array are ${myState.values.map(item => item[0])}`;
+         console.log(msgSort);
+         window.speechSynthesis.speak(msgSort);
+         msgSort.onend = resolve;
+      });
+   }
+   
+   const solve = async () => {
+       
+      await initialPrompt();
       
       let n = values.length;
 
@@ -28,8 +39,8 @@ const SelectionSort = () =>{
          console.log(values[i],"values[i]")
          console.log(values[ind],"values[ind]");
 
-         var msg = new SpeechSynthesisUtterance();
-           msg.text = `${values[i]} is swapping with ${values[ind]}`;
+             var msg = new SpeechSynthesisUtterance();
+             msg.text = `${values[i]} at index ${i} is swapping with ${values[ind]} at index ${ind}`;
              window.speechSynthesis.speak(msg);
 
          let temp = values[i];
@@ -62,10 +73,14 @@ const SelectionSort = () =>{
             type:'UPDATE_COLOR',
             color: 'rgb(0, 182, 0)'
          })
+          
+         var msgSort = new SpeechSynthesisUtterance();
+         msgSort.text = `Array is sorted`;
+         window.speechSynthesis.speak(msgSort);
 
       },(myState.speed*3*n)+50);
    };
-
+  
    useEffect(() => {
       if(myState.algorithm==='selection'){
          if(myState.play)

@@ -13,9 +13,19 @@ const BubbleSort = () =>{
 
    let values = myState.values.map((item) => item[0]);
    let ids = myState.values.map((item) => item[1]);
+
+   const initialPrompt = () => {
+      return new Promise((resolve) => {
+         var msgSort = new SpeechSynthesisUtterance();
+         msgSort.text = `Elements in array are ${myState.values.map(item => item[0])}`;
+         window.speechSynthesis.speak(msgSort);
+         msgSort.onend = resolve;
+      });
+   }
    
-   const solve = () => {
-     
+   const solve = async () => {
+
+      await initialPrompt();
       
       for(let i = values.length,timer = 0; i > 0;timer += i-1, i--){
          setTimeout(() => {
@@ -80,7 +90,9 @@ const BubbleSort = () =>{
          })
 
          var msgSort = new SpeechSynthesisUtterance();
-         msgSort.text = `Array is sorted`;
+         console.log(myState.values);
+         msgSort.text = ` Elements in sorted  array are ${myState.values.reverse().map(item => item[0])}`;
+         
          window.speechSynthesis.speak(msgSort);
 
       },(((myState.values.length-1)*(myState.values.length))/2)*myState.speed+50);

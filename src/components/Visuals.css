@@ -53,10 +53,11 @@
 
 .visual__item {
   position: absolute;
+ 
 }
 
 .visual__item > h4 {
-  font-size: 0.4rem;
+  font-size: 0.6rem;
 }
 
 .visual__btns {

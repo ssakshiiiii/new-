@@ -131,11 +131,11 @@ function Sidebar({ selectedAlgorithm, isDisabled, handleAlgorithmChange }) {
             <div className="sidebar__option">
                 <label htmlFor="speed">Speed: </label>
                 <select name="speed" defaultValue={100} id="speed" onChange={(e) => handleSpeed(e.target.value)} disabled={isDisabled}>
-                    <option value={4000}>Ultra Slow</option>
+                    <option value={3000}>Ultra Slow</option>
                     <option value={500} >Slow</option>
                     <option value={200} >Medium</option>
                     <option value={100} >Fast</option>
-                    <option value={20} >Super Fast</option>
+                   
                     
                 </select>
             </div>
